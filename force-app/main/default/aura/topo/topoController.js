@@ -12,12 +12,15 @@
 
     comprobar : function(component, event, helper) {
         if(component.get("v.color") == "rojo"){
-            var evento = $A.get("e.c:parametros");
-            var puntuacion = evento.getParam("puntuacion");
+
+            //coger el parametro puntuacion del evento
+            
+            var puntuacion = event.getParam("puntuacion");
             puntuacion++
-            evento.setParams({"puntuacion": puntuacion});
-            evento.fire();
+            event.setParams({"puntuacion": puntuacion});
+            event.fire();
             component.set("v.color","azul")
+            console.log("puntuacion: "+puntuacion)
         }        
     },
 

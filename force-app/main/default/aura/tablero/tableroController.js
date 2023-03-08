@@ -16,9 +16,10 @@
 
                     var numAleatorio = response.getReturnValue();
                     numAnterior = response.getReturnValue();
+                    var puntuacion = 0
 
                     var evento = $A.get("e.c:parametros");
-                    evento.setParams({"random": numAleatorio, "numAnterior": numAnterior, "puntuacion":0});
+                    evento.setParams({"random": numAleatorio, "numAnterior": numAnterior, "puntuacion":puntuacion});
                     component.set("v.numAnterior", numAnterior); 
                     this.devolver = numAleatorio;       
                     evento.fire();
@@ -39,15 +40,9 @@
 
         document.getElementById("marcador").style.display = "block";
 
-
-    },
-    
-    desactivar : function(component, event, helper) {
-        for (let i = 1; i < 9; i++) {
-            var nombre = "topo"+i;
-            var findTopo = component.find(nombre);
-            findTopo.desactivar()
-        }
+        helper.desactivar(component, event);
     }
+    
+    
 
 })
