@@ -2,7 +2,7 @@
     
     start : function(component, event, helper) {
         var action = component.get("c.getRandomNumber");
-            
+            helper.desactivar(component, event);
             var numAnterior = 0;
 
             action.setParams({
