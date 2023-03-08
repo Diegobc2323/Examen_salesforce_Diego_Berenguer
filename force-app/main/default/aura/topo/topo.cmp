@@ -1,7 +1,12 @@
 <aura:component>
+    <aura:attribute name="tablero" type="Aura.component"></aura:attribute>
     <aura:attribute name="color" type="String" default="azul"/>
     <aura:attribute name="posicion" type="Integer" />
 
     <div class="{!v.color}"></div>
+
+    <aura:method name="funcionHijo" action="{!c.activar}">
+        <aura:attribute name="numAleatorio" type="Integer"></aura:attribute>
+    </aura:method>
 
 </aura:component>	

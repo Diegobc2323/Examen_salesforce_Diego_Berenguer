@@ -1,0 +1,5 @@
+<aura:event type="APPLICATION" description="Event template">
+    <aura:attribute name="random" type="Integer" />
+    <aura:attribute name="numAnterior" type="Integer" />
+    <aura:attribute name="puntuacion" type="Integer" />
+</aura:event>
