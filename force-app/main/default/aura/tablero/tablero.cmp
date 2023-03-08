@@ -1,0 +1,21 @@
+<aura:component>
+    <div>
+        <div style="display: flex;">
+            <c:topo posicion="1"></c:topo>
+            <c:topo posicion="2"></c:topo>
+            <c:topo posicion="3"></c:topo>
+            <c:topo posicion="4"></c:topo>
+        </div>
+        <div style="display: flex;">
+            <c:topo posicion="5"></c:topo>
+            <c:topo posicion="6"></c:topo>
+            <c:topo posicion="7"></c:topo>
+            <c:topo posicion="8"></c:topo>  
+        </div>
+    </div>
+
+    <div>
+        <button>Start</button>
+        <button>Stop</button>
+    </div>
+</aura:component>	

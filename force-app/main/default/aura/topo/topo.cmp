@@ -1,0 +1,7 @@
+<aura:component>
+    <aura:attribute name="color" type="String" default="azul"/>
+    <aura:attribute name="posicion" type="Integer" />
+
+    <div class="{!v.color}"></div>
+
+</aura:component>	

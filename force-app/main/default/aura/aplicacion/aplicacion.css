@@ -1,0 +1,15 @@
+.THIS {
+}
+
+.THIS .rojo{
+    background-color: red;
+    width: 15vh;
+    height: 15vh; 
+    border: 1px solid black;
+}
+.THIS .azul{
+    background-color: blue;
+    width: 15vh;
+    height: 15vh; 
+    border: 1px solid black;
+}
