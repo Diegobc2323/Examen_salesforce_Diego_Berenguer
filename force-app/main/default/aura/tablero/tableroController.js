@@ -40,7 +40,7 @@
         document.getElementById("marcador").style.display = "block";
 
         helper.desactivar(component, event);
-    },
+    }
     
     
 
