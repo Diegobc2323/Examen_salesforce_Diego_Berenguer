@@ -33,15 +33,14 @@
     },
 
     stop : function(component, event, helper) {
-        //coger la puntuacion del evento parametros y devolverlo
-        var event = $A.get("e.c:parametros");
+        
         var puntuacion = event.getParam("puntuacion");
         component.set("v.puntuacion", puntuacion);
 
         document.getElementById("marcador").style.display = "block";
 
         helper.desactivar(component, event);
-    }
+    },
     
     
 

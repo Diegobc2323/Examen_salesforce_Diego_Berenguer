@@ -10,5 +10,5 @@
     </aura:method>
 
     <aura:method name="desactivar" action="{!c.desactivar}"></aura:method>
-    <aura:handler event="c:parametros" action="{!c.comprobar}"/>
+    <aura:handler event="c:mensajeTopo" action="{!c.comprobar}"/>
 </aura:component>	

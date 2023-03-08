@@ -11,16 +11,11 @@
     },
 
     comprobar : function(component, event, helper) {
+        
         if(component.get("v.color") == "rojo"){
-
-            //coger el parametro puntuacion del evento
-            
-            var puntuacion = event.getParam("puntuacion");
-            puntuacion++
-            event.setParams({"puntuacion": puntuacion});
-            event.fire();
-            component.set("v.color","azul")
-            console.log("puntuacion: "+puntuacion)
+            event.setParams({"mensajeTopo": "Has acertado"});
+        }else{
+            event.setParams({"mensajeTopo": "Has fallado"});
         }        
     },
 

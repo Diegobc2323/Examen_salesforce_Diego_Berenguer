@@ -21,5 +21,8 @@
     <div>
         <button onclick="{!c.start}">Start</button>
         <button onclick="{!c.stop}">Stop</button>
+        
     </div>
+    
+    <aura:handler event="c:parametros" action="{!c.stop}"/>
 </aura:component>	
