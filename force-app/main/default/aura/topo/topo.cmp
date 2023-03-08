@@ -3,10 +3,11 @@
     <aura:attribute name="color" type="String" default="azul"/>
     <aura:attribute name="posicion" type="Integer" />
 
-    <div class="{!v.color}"></div>
+    <div class="{!v.color}" onclick="{!c.comprobar}"></div>
 
     <aura:method name="funcionHijo" action="{!c.activar}">
         <aura:attribute name="numAleatorio" type="Integer"></aura:attribute>
     </aura:method>
 
+    <aura:method name="desactivar" action="{!c.desactivar}"></aura:method>
 </aura:component>	

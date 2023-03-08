@@ -25,11 +25,29 @@
 
                     var nombre = "topo"+numAleatorio;
                     var findTopo = component.find(nombre);
-                    console.log(findTopo)
                     findTopo.funcionHijo(numAleatorio)
                 }
             });
         $A.enqueueAction(action);
+    },
+
+    stop : function(component, event, helper) {
+        //coger la puntuacion del evento parametros y devolverlo
+        var event = $A.get("e.c:parametros");
+        var puntuacion = event.getParam("puntuacion");
+        component.set("v.puntuacion", puntuacion);
+
+        document.getElementById("marcador").style.display = "block";
+
+
+    },
+    
+    desactivar : function(component, event, helper) {
+        for (let i = 1; i < 9; i++) {
+            var nombre = "topo"+i;
+            var findTopo = component.find(nombre);
+            findTopo.desactivar()
+        }
     }
 
 })

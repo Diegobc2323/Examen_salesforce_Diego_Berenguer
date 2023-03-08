@@ -2,4 +2,5 @@
     <aura:attribute name="random" type="Integer" />
     <aura:attribute name="numAnterior" type="Integer" />
     <aura:attribute name="puntuacion" type="Integer" />
+    <aura:attribute name="mensaje" type="String" />
 </aura:event>
