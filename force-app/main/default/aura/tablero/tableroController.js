@@ -1,47 +1,45 @@
 ({
     
     start : function(component, event, helper) {
-        var action = component.get("c.getRandomNumber");
-            helper.desactivar(component, event);
-            var numAnterior = 0;
+        helper.desactivar(component, event);
+         
+         
+        helper.poderJugar(component, event, true);
+        var puntuacion = 0
+        var numAnterior = 0
+        component.set("v.puntuacion", puntuacion);  
 
-            action.setParams({
-                "min": 1,
-                "max": 8,
-                "numAnterior": numAnterior
-            });
-            action.setCallback(this, function(response) {
-                var state = response.getState();
-                if (state === "SUCCESS") {
-
-                    var numAleatorio = response.getReturnValue();
-                    numAnterior = response.getReturnValue();
-                    var puntuacion = 0
-
-                    var evento = $A.get("e.c:parametros");
-                    evento.setParams({"random": numAleatorio, "numAnterior": numAnterior, "puntuacion":puntuacion});
-                    component.set("v.numAnterior", numAnterior); 
-                    this.devolver = numAleatorio;       
-                    evento.fire();
-
-                    var nombre = "topo"+numAleatorio;
-                    var findTopo = component.find(nombre);
-                    findTopo.funcionHijo(numAleatorio)
-                }
-            });
-        $A.enqueueAction(action);
+        helper.activar(component, event, numAnterior)
     },
 
     stop : function(component, event, helper) {
-        
-        var puntuacion = event.getParam("puntuacion");
-        component.set("v.puntuacion", puntuacion);
 
-        document.getElementById("marcador").style.display = "block";
+        component.set("v.jugando", false);
 
+        helper.poderJugar(component, event, false);
         helper.desactivar(component, event);
+
+        var evento = $A.get("e.c:parar");
+        evento.setParams({"puntuacion": component.get("v.puntuacion")});
+        evento.fire();
+        component.set("v.puntuacion", 0);
+    },
+
+    
+
+    controlarEvento : function(component, event, helper) {
+        helper.desactivar(component, event);
+        var puntuacion = component.get("v.puntuacion");
+        
+        if(event.getParam("mensaje") == "Has acertado"){
+            puntuacion++
+        }else{
+            puntuacion=0
+        }
+        component.set("v.puntuacion", puntuacion);
+        var numAnterior = component.get("v.numAnterior")
+
+        helper.activar(component, event, numAnterior)
     }
-    
-    
 
 })

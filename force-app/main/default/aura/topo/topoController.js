@@ -11,12 +11,20 @@
     },
 
     comprobar : function(component, event, helper) {
-        
-        if(component.get("v.color") == "rojo"){
-            event.setParams({"mensajeTopo": "Has acertado"});
+  
+        if (component.get("v.jugando") == false) {
+            console.log("No puedes jugar");
         }else{
-            event.setParams({"mensajeTopo": "Has fallado"});
-        }        
+            var evento = $A.get("e.c:parametros");
+        
+            if(component.get("v.color") == "rojo"){
+                evento.setParams({"mensaje": "Has acertado"});
+            }else{
+                evento.setParams({"mensaje": "Has fallado"});
+            }      
+            
+            evento.fire();
+        } 
     },
 
     desactivar : function(component, event, helper) {

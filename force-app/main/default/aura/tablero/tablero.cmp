@@ -1,8 +1,8 @@
 <aura:component controller="ApexController">
-    <aura:attribute name="numAnterior" type="Integer" default="azul"/>
+    <aura:attribute name="numAnterior" type="Integer"/>
     <aura:attribute name="random" type="Integer" />
     <aura:attribute name="puntuacion" type="Integer" default="0"/>
-    <h1 id="marcador" style="display: none;">Hasta ahora has conseguido {!v.puntuacion} puntos</h1>
+    <aura:attribute name="jugando" type="Boolean" default="false"/>
     <div>
         <div style="display: flex;">
             <c:topo posicion="1" aura:id="topo1"></c:topo>
@@ -24,5 +24,6 @@
         
     </div>
     
-    <aura:handler event="c:parametros" action="{!c.stop}"/>
+    <aura:handler event="c:parametros" action="{!c.controlarEvento}"></aura:handler>
+    
 </aura:component>	

@@ -1,0 +1,10 @@
+<aura:component>
+    <aura:attribute name="puntuacion" type="Integer" default="0"></aura:attribute>
+    <aura:attribute name="partida" type="Integer" default="1"></aura:attribute>
+
+    <ul id="partidas">
+
+    </ul>
+
+    <aura:handler event="c:parar" action="{!c.registrarPartida}"></aura:handler>
+</aura:component>	
