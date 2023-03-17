@@ -1,8 +1,21 @@
 <aura:component controller="ApexController">
-    <aura:attribute name="numAnterior" type="Integer"/>
+    <aura:attribute name="numAnterior" type="Integer[]" default="[0]"/>
     <aura:attribute name="random" type="Integer" />
     <aura:attribute name="puntuacion" type="Integer" default="0"/>
     <aura:attribute name="jugando" type="Boolean" default="false"/>
+
+    <select id="numTopos">
+        <option value="1">Selecciona el numero de topos a levantar</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+    </select>
+
     <div>
         <div style="display: flex;">
             <c:topo posicion="1" aura:id="topo1"></c:topo>

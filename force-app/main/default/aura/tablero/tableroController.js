@@ -1,15 +1,19 @@
 ({
-    
     start : function(component, event, helper) {
         helper.desactivar(component, event);
          
          
         helper.poderJugar(component, event, true);
         var puntuacion = 0
-        var numAnterior = 0
+        var numAnterior = component.get("v.numAnterior")
+
+        numAnterior.length = 0;
+        numAnterior.push(0);
+        numAnterior.push(1);
+        component.set("v.numAnterior", numAnterior);
         component.set("v.puntuacion", puntuacion);  
 
-        helper.activar(component, event, numAnterior)
+        helper.activar(component, event)
     },
 
     stop : function(component, event, helper) {
@@ -37,9 +41,8 @@
             puntuacion=0
         }
         component.set("v.puntuacion", puntuacion);
-        var numAnterior = component.get("v.numAnterior")
 
-        helper.activar(component, event, numAnterior)
+        helper.activar(component, event)
     }
 
 })
